@@ -1,34 +1,34 @@
-# ±àÒëÆ÷ÓëÑ¡Ïî
+# Compiler and options
 CXX       := g++
 CXXFLAGS  := -std=c++17 -O2 -Wall -Wextra
 
-# ¿ÉÖ´ĞĞÎÄ¼şÃû³Æ
+# Executable name
 TARGET    := tower_defense
 
-# Ô´ÎÄ¼şÁĞ±í
+# Source file list
 SRCS      := main.cpp io.cpp
 
-# ×Ô¶¯ÓÉ SRCS ÍÆµ¼³ö¶ÔÏóÎÄ¼şÁĞ±í
+# Object files automatically derived from SRCS
 OBJS      := $(SRCS:.cpp=.o)
 
-# Ä¬ÈÏÄ¿±ê£º±àÒë²¢Á´½Ó
+# Default target: compile and link
 all: $(TARGET)
 
-# Á´½Ó½×¶Î£ºÓÉ .o ÎÄ¼şÉú³É¿ÉÖ´ĞĞ
+# Linking stage: generate executable from .o files
 $(TARGET): $(OBJS)
 	$(CXX) $(CXXFLAGS) -o $@ $^
 
-# ±àÒë¹æÔò£º.cpp ¡ú .o
-# Èç¹ûÄãµÄÔ´ÎÄ¼şÀï»¹ include ÁËÆäËûÍ·£¨Èç io.h£©£¬¿ÉÒÔÔÚÕâÀïÍ³Ò»Ìí¼ÓÒÀÀµ£º
+# Compilation rule: .cpp â†’ .o
+# If your source files include other headers (like io.h), you can add dependencies here:
 %.o: %.cpp io.h
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-# ÇåÀíÖĞ¼äÎÄ¼şºÍ¿ÉÖ´ĞĞ
+# Clean intermediate files and executable
 .PHONY: clean
 clean:
 	rm -f $(OBJS) $(TARGET)
 
-# ÔËĞĞ³ÌĞò£¨¿ÉÑ¡£©
+# Run the program (optional)
 .PHONY: run
 run: $(TARGET)
 	./$(TARGET)
