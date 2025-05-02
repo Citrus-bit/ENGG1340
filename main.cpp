@@ -17,11 +17,11 @@
 
 using namespace std;
 
-// ¡ª¡ª Configuration ¡ª¡ª 
+// â€”â€” Configuration â€”â€” 
 const int ROW_W = 4;
 const int FRAME_TIME = 250;
 
-// ¡ª¡ª Forward Declarations ¡ª¡ª 
+// â€”â€” Forward Declarations â€”â€” 
 struct Monster;
 struct Tower;
 struct Projectile;
@@ -53,7 +53,7 @@ bool isOccupied(int r, int c);
 void usePrepareItems();
 void showShop();
 
-// ¡ª¡ª Data Structures ¡ª¡ª 
+// â€”â€” Data Structures â€”â€” 
 struct Monster {
     double row, col;
     int hp;
@@ -86,7 +86,7 @@ struct Item {
     function<void()> applyPrepare;
 };
 
-// ¡ª¡ª Global Variables ¡ª¡ª 
+// â€”â€” Global Variables â€”â€” 
 int playerHP, playerGold;
 int spawnCd, waveNumber, toSpawn, baseHP;
 bool paused;
@@ -150,7 +150,7 @@ vector<string> gameMap = {
 vector<int> plusCols;
 vector<int> plusRows = { 0,8,16,24 };
 
-// ¡ª¡ª Implementation ¡ª¡ª 
+// â€”â€” Implementation â€”â€” 
 
 // Item Effects
 void damageUpgrade() {
@@ -342,7 +342,7 @@ void updateProjectiles() {
 void placeTower() {
     draw();
     char ch;
-    // ¡ª¡ª Modified here ¡ª¡ª 
+    // â€”â€” Modified here â€”â€” 
     do {
         cout << "Place Tower: (1) Arrow (20)  2) Arc (30)\n";
         cin >> ch;
@@ -352,7 +352,7 @@ void placeTower() {
         }
     } while (ch != '1' && ch != '2');
     int cost = (ch == '2') ? 30 : 20;
-    // ¡ª¡ª Check if enough gold, return if not ¡ª¡ª 
+    // â€”â€” Check if enough gold, return if not â€”â€” 
     if (playerGold < cost) {
         cout << "Not enough gold!\n";
         this_thread::sleep_for(chrono::milliseconds(800));
@@ -480,8 +480,8 @@ void showShop() {
                 }, nullptr
             },
 
-            // **Next Wave Gold Income ¡Á2**
-            { "Wealth Badge+ (Next Wave Gold ¡Á2)",120, Prepare,
+            // **Next Wave Gold Income Ã—2**
+            { "Wealth Badge+ (Next Wave Gold Ã—2)",120, Prepare,
                 nullptr,
                 []() {
 
@@ -646,7 +646,7 @@ int main() {
 
             if (playerHP <= 0) break;
 
-            // ¼ì²éÊÇ·ñ´ïµ½×î´ó²¨´Î
+            // Check whether it has aalready achieved the maximum round
             int maxWaves = (difficulty == 1) ? 3 : (difficulty == 2) ? 5 : 7;
             if (waveNumber >= maxWaves) {
                 draw();
@@ -659,7 +659,7 @@ int main() {
                 cout << "- Towers Built: " << towers.size() << "\n";
                 cout << "\nPress Enter to return to main menu...";
                 cin.get();
-                break;  // ÍË³öÓÎÏ·Ñ­»·
+                break;  // Quit the game cycle
             }
 
             char post;
