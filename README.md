@@ -19,8 +19,22 @@ Table of Contents
 
 Project Overview
 
-    This is a console-based tower defense game implemented in C++. Players place different types of towers to intercept randomly spawning monsters across multiple waves. The game supports three difficulty levels and includes a binary save/load feature.
+        This is a console-based tower defense game implemented in C++. Players place different types of towers to intercept randomly spawning monsters across multiple waves. The game supports three difficulty levels and includes a binary save/load feature.
+    
+Gameplay
 
+        Placement Phase: At the start of each wave, you have time to build towers. Press B (or select the menu) to place Arrow or Arc towers at marked '+' positions. Each tower costs gold.
+        
+        Wave Phase: Press Enter to begin. Monsters spawn from the leftmost 'S' markers and follow a segmented path towards the right. Surviving monsters decrease your HP when they reach the end.
+        
+        Combat: Towers automatically fire projectiles at nearby monsters. Arrow towers deal direct damage; Arc towers hit multiple targets. Frost traps and other items can slow or damage groups.
+        
+        Economy: Defeating monsters awards gold. Use gold in the shop between waves to buy upgrades or prepare special items.
+        
+        Shop & Inventory: After each wave, enter the shop to purchase immediate or prepare-type items. Prepare items take effect in the next placement phase.
+        
+        Save/Load: You can save progress to one of three slots and load it later from the main menu.
+        
 Features
 
         Random Events: Elite monster spawns, shop item order, and other events are randomized using PRNG.
@@ -54,23 +68,63 @@ Directory Structure
 
 Build & Run
 
-        Ensure you have g++ (C++17) installed.
+        Linux & macOS
         
-        In the project root directory, run:
+                Ensure you have a C++17 compiler installed (g++ or clang++) and make.
+                
+                Open a terminal, cd to the project root directory.
+                
+                Build with:
+                
+                        make
+                
+                Run the game:
+                
+                        ./tower_defense
+                
+                To clean build artifacts:
+                
+                        make clean
+                
+                Alternative (no Makefile)
+                
+                        g++ -std=c++17 main.cpp io.cpp -o tower_defense
+                        ./tower_defense
         
-        make
+        Windows (MinGW-w64)
         
-        After compilation, launch the game with:
+                Install MinGW-w64 and add its bin folder to your PATH.
+                
+                Open Command Prompt or PowerShell and navigate to the project folder.
+                
+                Build with:
+                
+                        mingw32-make
+                
+                Or compile directly:
+                
+                        g++ -std=c++17 main.cpp io.cpp -o tower_defense.exe
+                
+                Run:
+                
+                        .	ower_defense.exe
+                
+                Clean up:
+                
+                        mingw32-make clean
         
-        ./tower_defense
+        Windows (MSVC)
         
-        You can also run directly:
-        
-        make run
-        
-        To remove build artifacts:
-        
-        make clean
+                Open “x64 Native Tools Command Prompt for VS”.
+                
+                Navigate to the project directory.
+                
+                Compile with:
+                
+                        cl /EHsc /std:c++17 main.cpp io.cpp /Fe:tower_defense.exe
+                
+                Run:
+                        tower_defense.exe
 
 Dynamic Memory Management
 
