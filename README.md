@@ -103,22 +103,22 @@ Build & Run
                 
                 If you do not see “Set as Startup Item” when right-clicking main.cpp, you are in an Open Folder workspace. Instead:
                 
-                Go to File → New → Project and choose Empty Project (C++).
-                
-                After creating the project, right-click the project in Solution Explorer, select Add → Existing Item..., and choose main.cpp, io.cpp, io.h.
-                
-                Now right-click main.cpp under the project and select Set as Startup Item.
+                        Go to File → New → Project and choose Empty Project (C++).
+                        
+                        After creating the project, right-click the project in Solution Explorer, select Add → Existing Item..., and choose main.cpp, io.cpp, io.h.
+                        
+                        Now right-click main.cpp under the project and select Set as Startup Item.
                 
                 Ensure the C++17 standard is enabled:
                 
-                Project menu → Properties → Configuration Properties → C/C++ → Language → C++ Language Standard = ISO C++17 (/std:c++17).
-                
+                        Project menu → Properties → Configuration Properties → C/C++ → Language → C++ Language Standard = ISO C++17 (/std:c++17).
+                        
                 Build and run:
                 
-                Build menu → Build Solution (or Ctrl+Shift+B).
+                        Build menu → Build Solution (or Ctrl+Shift+B).
+                        
+                        Debug menu → Start Without Debugging (or Ctrl+F5).
                 
-                Debug menu → Start Without Debugging (or Ctrl+F5).
-        
 
 
 Dynamic Memory Management
