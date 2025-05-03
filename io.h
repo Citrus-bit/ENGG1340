@@ -1,10 +1,10 @@
 #pragma once
 #include <string>
 
-// 存档文件
+// Archive Files
 extern const std::string slotFiles[3];
 
-// 存档接口
+// Archive interface
 void saveGame(int slot,
     int difficulty,
     int playerHP,
