@@ -481,7 +481,7 @@ void showShop() {
             },
 
             // **Next Wave Gold Income ×2**
-            { "Wealth Badge+ (Next Wave Gold ×2)",120, Prepare,
+            { "Wealth Badge+ (Next Wave Gold *2)",120, Prepare,
                 nullptr,
                 []() {
 
