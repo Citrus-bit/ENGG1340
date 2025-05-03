@@ -94,40 +94,30 @@ Build & Run
                 
                         g++ -std=c++17 main.cpp io.cpp -o tower_defense
                         ./tower_defense
-        Windows (MSVC)
-        
-                Open “x64 Native Tools Command Prompt for VS”.
-                
-                Navigate to the project directory.
-                
-                Compile with:
-                
-                        cl /EHsc /std:c++17 main.cpp io.cpp /Fe:tower_defense.exe
-                
-                Run:
-                        tower_defense.exe        
                         
-        Windows (MinGW-w64)
+        Windows (Visual Studio)
         
-                Install MinGW-w64 and add its bin folder to your PATH.
+                In Visual Studio, click Clone a repository on the start window (or File → Clone repository) and paste your GitHub URL.
                 
-                Open Command Prompt or PowerShell and navigate to the project folder.
+                Once cloned, Visual Studio opens the folder in Solution Explorer. You should see main.cpp, io.cpp, and io.h listed.
                 
-                Build with:
+                If you do not see “Set as Startup Item” when right-clicking main.cpp, you are in an Open Folder workspace. Instead:
                 
-                        mingw32-make
+                Go to File → New → Project and choose Empty Project (C++).
                 
-                Or compile directly:
+                After creating the project, right-click the project in Solution Explorer, select Add → Existing Item..., and choose main.cpp, io.cpp, io.h.
                 
-                        g++ -std=c++17 main.cpp io.cpp -o tower_defense.exe
+                Now right-click main.cpp under the project and select Set as Startup Item.
                 
-                Run:
+                Ensure the C++17 standard is enabled:
                 
-                        .	ower_defense.exe
+                Project menu → Properties → Configuration Properties → C/C++ → Language → C++ Language Standard = ISO C++17 (/std:c++17).
                 
-                Clean up:
+                Build and run:
                 
-                        mingw32-make clean
+                Build menu → Build Solution (or Ctrl+Shift+B).
+                
+                Debug menu → Start Without Debugging (or Ctrl+F5).
         
 
 
