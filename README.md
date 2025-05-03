@@ -24,6 +24,8 @@ Project Overview
         This is a console-based tower defense game implemented in C++. Players place different types of towers to intercept randomly spawning monsters across multiple waves. The game supports three difficulty levels and includes a binary save/load feature.
     
 Gameplay
+        
+        Tip: For best experience, run the game in full-screen mode.
 
         Placement Phase: At the start of each wave, you have time to build towers. Press B (or select the menu) to place Arrow or Arc towers at marked '+' positions. Each tower costs gold.
         
@@ -92,7 +94,19 @@ Build & Run
                 
                         g++ -std=c++17 main.cpp io.cpp -o tower_defense
                         ./tower_defense
+        Windows (MSVC)
         
+                Open “x64 Native Tools Command Prompt for VS”.
+                
+                Navigate to the project directory.
+                
+                Compile with:
+                
+                        cl /EHsc /std:c++17 main.cpp io.cpp /Fe:tower_defense.exe
+                
+                Run:
+                        tower_defense.exe        
+                        
         Windows (MinGW-w64)
         
                 Install MinGW-w64 and add its bin folder to your PATH.
@@ -115,18 +129,7 @@ Build & Run
                 
                         mingw32-make clean
         
-        Windows (MSVC)
-        
-                Open “x64 Native Tools Command Prompt for VS”.
-                
-                Navigate to the project directory.
-                
-                Compile with:
-                
-                        cl /EHsc /std:c++17 main.cpp io.cpp /Fe:tower_defense.exe
-                
-                Run:
-                        tower_defense.exe
+
 
 Dynamic Memory Management
 
