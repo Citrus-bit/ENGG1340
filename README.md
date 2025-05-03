@@ -5,6 +5,8 @@ Table of Contents
 
         Project Overview
         
+        Gameplay
+        
         Features
         
         Directory Structure
